@@ -6,6 +6,8 @@ public:
 
 	static void setInstance(HINSTANCE hInstance);
 
+	HWND gethWnd();
+
 	virtual void load(HWND parent=NULL) = 0;
 
 	void setArea(int _x, int _y, int _width, int _height);
@@ -21,7 +23,7 @@ protected:
 	CString m_caption = TEXT("");
 
 	//ÊÇ·ñ¿É¼û
-	bool m_visibility;
+	bool m_visible;
 
 	int m_x = CW_USEDEFAULT;
 	int m_y = 0;

@@ -8,7 +8,7 @@ Form::Form(CString className, WNDPROC wndproc) :m_className(className), m_wndPro
 
 	m_wndProc = wndproc;
 
-	m_visibility = false;
+	m_visible = false;
 
 }
 
@@ -49,15 +49,40 @@ void Form::show(){
 	ShowWindow(m_hWnd, SW_SHOWDEFAULT);
 	UpdateWindow(m_hWnd);
 	
-	m_visibility = true;
+	m_visible = true;
 
 }
 
+//return defWndProc(this,hWnd,message,wParam,lParam);
 LRESULT CALLBACK Form::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
+	
+	int wmId, wmEvent;
+	PAINTSTRUCT ps;
+	HDC hdc;
 
+
+
+	switch (message){
+	case WM_COMMAND:
+
+		break;
+	case WM_PAINT:
+		hdc = BeginPaint(hWnd, &ps);
+		// TODO:  在此添加任意绘图代码...
+		//gdi.DrawLine(hdc, 0+20, 0+20, 200+20, 200+20, 16);
+		EndPaint(hWnd, &ps);
+		break;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
 
 	return 0;
 }
+
+
 
 ATOM Form::registerClass(WNDPROC wndproc){
 

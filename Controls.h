@@ -7,8 +7,8 @@ public:
 	Control();
 	~Control();
 
-protected:
-	virtual LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) = 0;
+public:
+	virtual LRESULT CALLBACK EventProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) = 0;
 
 };
 
@@ -20,7 +20,11 @@ public:
 
 	void load(HWND parent = NULL);
 
+	void setOnClickListener(void(*button_OnClick)());
+
 protected:
-	LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	LRESULT CALLBACK EventProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
+	void(*m_button_OnClick)() = NULL;
 
 };

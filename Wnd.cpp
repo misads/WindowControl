@@ -6,6 +6,11 @@ void Window::setInstance(HINSTANCE hInstance){
 	m_hInstance = hInstance;
 }
 
+HWND Window::gethWnd(){
+	return m_hWnd;
+
+}
+
 void Window::setArea(int _x, int _y, int _width, int _height){
 
 	m_x = _x;

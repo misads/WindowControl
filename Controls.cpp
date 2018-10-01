@@ -5,7 +5,7 @@
 
 Control::Control(){
 
-	m_visibility = true;
+	m_visible = true;
 
 }
 
@@ -30,7 +30,18 @@ void Button::load(HWND parent){
 
 }
 
-LRESULT CALLBACK Button::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
+void Button::setOnClickListener(void(*button_OnClick)()){
+
+	m_button_OnClick = button_OnClick;
+	
+}
+LRESULT CALLBACK Button::EventProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
+
+	if (message == WM_COMMAND){
+		if (m_button_OnClick) (*m_button_OnClick)();
+	}
+
+
 
 	return 0;
 }

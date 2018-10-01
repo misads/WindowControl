@@ -45,10 +45,10 @@
     <ClInclude Include="Application.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="UserForms.h">
+    <ClInclude Include="Form.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Form.h">
+    <ClInclude Include="Form1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -74,10 +74,10 @@
     <ClCompile Include="Application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UserForms.cpp">
+    <ClCompile Include="Form.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Form.cpp">
+    <ClCompile Include="Form1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

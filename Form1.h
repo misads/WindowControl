@@ -1,7 +1,7 @@
 #pragma once
 
 #include"Form.h"
-#include "Controls.h"
+#include"Controls.h"
 
 class Form1 :public Form{
 	
@@ -12,6 +12,8 @@ public:
 
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
+	void addControl(Control* p_control);
+
 	void loadControls();
 
 	void onLoad();
@@ -19,6 +21,12 @@ public:
 
 private:
 
+	static Form1* m_this;
+
+	static std::vector<Control*> m_controls;
+
 	Button button1;
+
+	friend void button1_click();
 
 };

@@ -1,6 +1,6 @@
 #pragma once
 #include<atlstr.h>
-#include"UserForms.h"
+#include"Form1.h"
 
 #define MAX_LOADSTRING 100
 
