@@ -27,6 +27,10 @@ private:
 
 	Button button1;
 
+	Button button2;
+
 	friend void button1_click();
+
+	friend void button2_click();
 
 };

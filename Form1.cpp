@@ -42,6 +42,14 @@ void button1_click(){
 
 }
 
+void button2_click(){
+
+	Form* m_this = Form1::m_this;
+
+	MessageBox(m_this->gethWnd(), L"button2", L"button2", 0);
+
+}
+
 void Form1::loadControls(){
 
 	//m_controls["button2"]=new Button();
@@ -55,6 +63,13 @@ void Form1::loadControls(){
 	button1.setArea(30, 30, 150, 30);
 	button1.load(m_hWnd);
 	button1.setOnClickListener(button1_click);
+
+	addControl(&button2);
+
+	button2.setCaption(TEXT("≤‚ ‘∞¥≈•2"));
+	button2.setArea(30, 80, 150, 30);
+	button2.load(m_hWnd);
+	button2.setOnClickListener(button2_click);
 
 }
 
