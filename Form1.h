@@ -29,8 +29,18 @@ private:
 
 	Button button2;
 
+	TextBox text1;
+
+	Label label1;
+
+	ListBox list1;
+
 	friend void button1_click();
 
 	friend void button2_click();
+
+	friend void text1_click();
+
+	friend void text1_change();
 
 };

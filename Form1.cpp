@@ -38,7 +38,7 @@ void button1_click(){
 
 	Form* m_this = Form1::m_this;
 	
-	MessageBox(m_this->gethWnd() , L"asd", L"asd", 0);
+	MessageBox(m_this->gethWnd() , L"button1", L"button1", 0);
 
 }
 
@@ -47,6 +47,23 @@ void button2_click(){
 	Form* m_this = Form1::m_this;
 
 	MessageBox(m_this->gethWnd(), L"button2", L"button2", 0);
+
+}
+
+void text1_click(){
+
+	Form* m_this = Form1::m_this;
+
+	//MessageBox(m_this->gethWnd(), L"text1", L"text1", 0);
+
+}
+
+
+void text1_change(){
+
+	Form* m_this = Form1::m_this;
+
+	MessageBox(m_this->gethWnd(), L"text1", L"text1", 0);
 
 }
 
@@ -70,6 +87,33 @@ void Form1::loadControls(){
 	button2.setArea(30, 80, 150, 30);
 	button2.load(m_hWnd);
 	button2.setOnClickListener(button2_click);
+
+	addControl(&text1);
+
+	text1.setCaption(TEXT("测试框1"));
+	text1.setArea(30, 130, 150, 30);
+	text1.load(m_hWnd);
+	text1.setOnChangeListener(text1_change);
+	
+	addControl(&label1);
+
+	label1.setCaption(TEXT("标签1"));
+	label1.setArea(30, 180, 150, 30);
+	label1.load(m_hWnd);
+
+	addControl(&list1);
+
+	list1.setCaption(TEXT("列表1"));
+	list1.setArea(30, 230, 150, 100);
+	list1.load(m_hWnd);
+	list1.addItem(L"条目1");
+	list1.addItem(L"条目2");
+	list1.addItem(L"条目3");
+	list1.addItem(L"条目4");
+	//list1.delItem(0);
+
+	//label1.setOnClickListener(text1_change);
+
 
 }
 
